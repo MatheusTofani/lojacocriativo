@@ -8,18 +8,7 @@ const Filter = () => {
   const [search, setSearch] = useState("");
   const [categorias, setCategorias] = useState([]);
   const [marcas, setMarcas] = useState([]);
-  const [sort, setSort] = useState(""); // "" | "preco-asc" | "preco-desc" | "az" | "za"
-  const [estoque, setEstoque] = useState(false);
-
-  // Alterna ordenação de preço
-  const togglePrecoSort = () => {
-    setSort((prev) => (prev === "preco-asc" ? "preco-desc" : "preco-asc"));
-  };
-
-  // Alterna ordenação alfabética
-  const toggleNomeSort = () => {
-    setSort((prev) => (prev === "az" ? "za" : "az"));
-  };
+  const [sort, setSort] = useState(""); 
 
   // Manipula categorias selecionadas
   const handleCategoria = (categoria) => {
@@ -40,7 +29,7 @@ const Filter = () => {
   };
 
   return (
-    <Container>
+    <Container className="mt-[120px]">
       <form
         className="flex flex-col md:flex-row gap-4 mb-6 py-4"
         onSubmit={(e) => e.preventDefault()}
@@ -96,7 +85,7 @@ const Filter = () => {
           {/* Marcas */}
           <p className="font-semibold mt-4 ">Marcas</p>
           <ul className="space-y-1">
-            {["DP SEMIJÓIAS", "FRANCINE MOREIRA", "OPEN HOUSE"].map((marca) => (
+            {["DP SEMIJÓIAS", "FRANCINE MOREIRA", "OPEN HOUSE", "ART TABUAS", "SILVANA", "RITMO", "JAQUELINE BRAGA", "DATIZA"].map((marca) => (
               <li key={marca}>
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
@@ -120,7 +109,6 @@ const Filter = () => {
             categoria={categorias}
             marca={marcas}
             sort={sort}
-            estoque={estoque}
           />
         </div>
       </div>

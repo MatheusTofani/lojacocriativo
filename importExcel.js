@@ -2,7 +2,7 @@ const admin = require("firebase-admin");
 const XLSX = require("xlsx");
 
 // importa o service account
-const serviceAccount = require("./lojacocriativo-1c233-firebase-adminsdk-fbsvc-6351785980.json");
+const serviceAccount = require("./lojacocriativo-1c233-firebase-adminsdk-fbsvc-0850e74ddd.json");
 
 // inicializa o Firebase Admin com as credenciais
 admin.initializeApp({
