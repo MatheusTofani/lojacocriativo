@@ -15,23 +15,30 @@ const Novidades = () => {
     fetchProdutos();
   }, []);
 
+
+const produtosRecentes = produtos
+  .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+  .slice(0, 8);
+
+
   return (
     <div className="my-[120px] px-4 md:px-0">
       <Container>
-        <h2 className="text-[#61482A] font-bold text-[20px]">Novidades</h2>
+        <h2 className="text-[#61482A] font-bold text-[20px] mb-6">Novidades</h2>
 
-
-        <Slider {...settingsNews}>
-          {produtos.map((produto) => (
-            <Card
-              key={produto.id}
-              nome={produto.Nome}
-              foto={produto.Foto}
-              preco={produto.Preço}
-            />
-          ))}
-
-        </Slider>
+        <div className="w-full">
+          <Slider {...settingsNews}>
+            {produtosRecentes.map((produto) => (
+              <div key={produto.id} className="px-2">
+                <Card
+                  nome={produto.Nome}
+                  foto={produto.Foto}
+                  preco={produto.Preço}
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
       </Container>
     </div>
   );
