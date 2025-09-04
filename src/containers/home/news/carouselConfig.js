@@ -2,7 +2,7 @@ const NextArrow = (props) => {
     const { onClick } = props;
     return (
         <button
-            className="absolute top-1/2 right-[-50] z-10 transform -translate-y-1/2 p-2"
+            className="absolute top-1/2 right-[-40px] z-10 transform -translate-y-1/2 p-2"
             onClick={onClick}
             aria-label="Next Slide"
             style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
@@ -26,7 +26,7 @@ const PrevArrow = (props) => {
     const { onClick } = props;
     return (
         <button
-            className="absolute top-1/2 left-[-50] z-10 transform -translate-y-1/2 p-2"
+            className="absolute top-1/2 left-[-40px] z-10 transform -translate-y-1/2 p-2"
             onClick={onClick}
             aria-label="Previous Slide"
             style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
@@ -46,36 +46,45 @@ const PrevArrow = (props) => {
     );
 };
 
-
 export const settingsNews = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  autoplay: false,
-  autoplaySpeed: 3000,
-  nextArrow: <NextArrow />,
-  prevArrow: <PrevArrow />,
-  responsive: [
-    {
-      breakpoint: 1024, 
-      settings: {
-        slidesToShow: 2,
-        arrows: true,
-      },
-    },
-    {
-      breakpoint: 768, 
-      settings: {
-        slidesToShow: 1,
-        arrows: false, 
-        centerMode: true,
-        centerPadding: "20px",
-      },
-    },
-  ],
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 3000,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                arrows: true,
+                centerMode: false,
+            },
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                centerMode: false, 
+                centerPadding: "0px", 
+            },
+        },
+        {
+            breakpoint: 480, 
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                centerMode: false,
+                centerPadding: "0px",
+            },
+        },
+    ],
 };
-
-
-
