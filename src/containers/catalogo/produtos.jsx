@@ -13,20 +13,16 @@ const Produtos = ({ search, categoria = [], marca = [], sort }) => {
     fetchProdutos();
   }, []);
 
-  // 1. Aplica filtros
   let filtered = produtos.filter((p) => {
     const matchesSearch = search
       ? p.Nome.toLowerCase().includes(search.toLowerCase())
       : true;
-
     const matchesCategoria =
       categoria.length > 0 ? categoria.includes(p.Categoria) : true;
     const matchesMarca = marca.length > 0 ? marca.includes(p.Marca) : true;
-
     return matchesSearch && matchesCategoria && matchesMarca;
   });
 
-  // 2. Aplica ordenação
   if (sort === "preco-asc") {
     filtered = [...filtered].sort((a, b) => a.Preço - b.Preço);
   } else if (sort === "preco-desc") {
@@ -37,15 +33,23 @@ const Produtos = ({ search, categoria = [], marca = [], sort }) => {
     filtered = [...filtered].sort((a, b) => b.Nome.localeCompare(a.Nome));
   }
 
-  // 3. Paginação
   const totalPages = Math.ceil(filtered.length / itemsPerPage);
   const startIndex = (page - 1) * itemsPerPage;
   const paginated = filtered.slice(startIndex, startIndex + itemsPerPage);
 
+  // Função para alterar a página e rolar para o topo
+  const handlePageChange = (newPage) => {
+    setPage(newPage);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // rolagem suave
+    });
+  };
+
   return (
     <div>
-      {/* Produtos */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Grid de produtos responsivo */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {paginated.map((produto) => (
           <Card
             key={produto.id}
@@ -57,32 +61,30 @@ const Produtos = ({ search, categoria = [], marca = [], sort }) => {
         ))}
       </div>
 
-      {/* Paginação */}
+      {/* Paginação responsiva */}
       <div className="flex justify-center mt-6 gap-2 flex-wrap">
         <button
           disabled={page === 1}
-          onClick={() => setPage(page - 1)}
+          onClick={() => handlePageChange(page - 1)}
           className="px-3 py-1 border rounded disabled:opacity-50 text-[#61482A] cursor-pointer hover:opacity-80 transition duration-200 border-[#61482A]"
         >
           Anterior
         </button>
 
-        {/* Mostra até 10 páginas e sempre primeira e última */}
         {Array.from({ length: totalPages }, (_, i) => i + 1)
           .filter((p) => {
-            if (totalPages <= 10) return true;
+            if (totalPages <= 5) return true;
             if (p === 1 || p === totalPages) return true;
-            if (Math.abs(p - page) <= 2) return true; // 2 páginas antes/depois
+            if (Math.abs(p - page) <= 1) return true;
             return false;
           })
           .map((p, i, arr) => (
-
             <span key={p}>
               {i > 0 && p - arr[i - 1] > 1 && <span className="px-1">...</span>}
               <button
-                onClick={() => setPage(p)}
+                onClick={() => handlePageChange(p)}
                 className={`px-3 py-1 border text-[#61482A] cursor-pointer hover:opacity-80 transition duration-200 border-[#61482A] rounded ${
-                  page === p ? "bg-[#61482A] text-[#F9F5F3]  " : ""
+                  page === p ? "bg-[#61482A] text-[#F9F5F3]" : ""
                 }`}
               >
                 {p}
@@ -92,8 +94,8 @@ const Produtos = ({ search, categoria = [], marca = [], sort }) => {
 
         <button
           disabled={page === totalPages}
-          onClick={() => setPage(page + 1)}
-          className="px-3 py-1 border rounded disabled:opacity-50  text-[#61482A] cursor-pointer hover:opacity-80 transition duration-200 border-[#61482A]"
+          onClick={() => handlePageChange(page + 1)}
+          className="px-3 py-1 border rounded disabled:opacity-50 text-[#61482A] cursor-pointer hover:opacity-80 transition duration-200 border-[#61482A]"
         >
           Próxima
         </button>

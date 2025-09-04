@@ -10,9 +10,7 @@ const HeroSlider = () => {
     return (
         <div className="relative">
             <Slider {...settingsHero}>
-                <img className='h-[500px] w-full object-cover' src="https://placehold.co/1336x400" alt="Slide 1" />
-                <img className='h-[500px] w-full object-cover' src="https://placehold.co/1336x400" alt="Slide 2" />
-                <img className='h-[500px] w-full object-cover' src="https://placehold.co/1336x400" alt="Slide 3" />
+                <img className='md:h-[500px]  h-[150px] w-full object-cover' src="/site-foto.png" alt="Slide 1" />
             </Slider>
         </div>
     );

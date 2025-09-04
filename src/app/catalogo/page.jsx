@@ -1,3 +1,4 @@
+import ClientLoader from "@/components/clientLoader";
 import Filter from "@/containers/catalogo/filter";
 import Footer from "@/containers/footer/footer";
 import Header from "@/containers/header/header";
@@ -7,6 +8,7 @@ import Promo from "@/containers/promo/promo";
 const Catalogo = () => {
     return (
         <div>
+            <ClientLoader />
             <Promo />
             <Header />
             <Filter />

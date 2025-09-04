@@ -59,17 +59,17 @@ export const settingsNews = {
   prevArrow: <PrevArrow />,
   responsive: [
     {
-      breakpoint: 1024, // <= 1024px
+      breakpoint: 1024, 
       settings: {
         slidesToShow: 2,
         arrows: true,
       },
     },
     {
-      breakpoint: 768, // <= 768px
+      breakpoint: 768, 
       settings: {
         slidesToShow: 1,
-        arrows: false, // força desativar arrows
+        arrows: false, 
         centerMode: true,
         centerPadding: "20px",
       },

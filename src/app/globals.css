@@ -21,3 +21,20 @@ body {
     animation: slideMobile 15s linear infinite;
   }
 }
+
+@keyframes fadeInColor {
+  0% {
+    fill: #8d3f2c18;
+  }
+  50% {
+     fill: #8D402C; 
+  }
+  100% {
+    fill: #8d3f2c18;
+  }
+}
+
+.loader {
+  animation: fadeInColor 3s ease-in forwards infinite;
+  height: 100px;
+}
