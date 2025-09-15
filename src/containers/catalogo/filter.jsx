@@ -132,7 +132,7 @@ const Filter = () => {
                   "DP SEMIJÓIAS",
                   "FRANCINE MOREIRA",
                   "OPEN HOUSE",
-                  "ART TABUAS",
+                  "VISIONAIRE",
                   "SILVANA",
                   "RITMO",
                   "JAQUELINE BRAGA",

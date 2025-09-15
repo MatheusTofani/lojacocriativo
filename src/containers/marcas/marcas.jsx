@@ -5,7 +5,6 @@ const Marcas = () => {
     { logo: '/logos/fran/fran.png' },
     { logo: '/logos/silvana/silvana.png' },
     { logo: '/logos/open/open.png' },
-    { logo: '/logos/art/art.png' },
     { logo: '/logos/dp/dp.png' },
     { logo: '/logos/jaqueline/jaqueline.png' },
     { logo: '/logos/visionaire/visionaire.png' },
