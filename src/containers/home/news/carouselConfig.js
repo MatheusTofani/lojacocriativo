@@ -46,11 +46,11 @@ const PrevArrow = (props) => {
   );
 };
 
-  const settingsNews = {
-    dots: true,
+ export const settingsNews = {
+    dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 1,
     arrows: true,
     responsive: [
