@@ -58,7 +58,7 @@ export const settingsNews = {
   prevArrow: <PrevArrow />,
   responsive: [
     {
-      breakpoint: 1280,
+      breakpoint: 1280, // até 1280px
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -66,7 +66,7 @@ export const settingsNews = {
       },
     },
     {
-      breakpoint: 1024,
+      breakpoint: 1024, // até 1024px
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
@@ -74,15 +74,7 @@ export const settingsNews = {
       },
     },
     {
-      breakpoint: 768, // tablets
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-      },
-    },
-    {
-      breakpoint: 600, // celulares até 600px (iPhone 13 e A15 inclusos)
+      breakpoint: 768, // até 768px (tablets e celulares maiores)
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
