@@ -46,40 +46,30 @@ const PrevArrow = (props) => {
   );
 };
 
-export const settingsNews = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 5,
-  slidesToScroll: 1,
-  autoplay: false,
-  autoplaySpeed: 3000,
+  const settingsNews = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          centerMode: true,
+          centerPadding: "20px",
+        },
+      },
+    ],
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
-  responsive: [
-    {
-      breakpoint: 1280, // até 1280px
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        arrows: true,
-      },
-    },
-    {
-      breakpoint: 1024, // até 1024px
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        arrows: true,
-      },
-    },
-    {
-      breakpoint: 768, // até 768px (tablets e celulares maiores)
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-      },
-    },
-  ],
 };

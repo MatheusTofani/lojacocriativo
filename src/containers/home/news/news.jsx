@@ -29,7 +29,7 @@ const produtosRecentes = produtos
         <div className="w-full">
           <Slider {...settingsNews}>
             {produtosRecentes.map((produto) => (
-              <div key={produto.id} className="px-2">
+              <div key={produto.id} className="md:px-2">
                 <Card
                   nome={produto.Nome}
                   foto={produto.Foto}
