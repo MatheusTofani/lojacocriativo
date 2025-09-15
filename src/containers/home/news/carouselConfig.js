@@ -1,3 +1,4 @@
+
 const NextArrow = (props) => {
   const { onClick } = props;
   return (
@@ -46,30 +47,28 @@ const PrevArrow = (props) => {
   );
 };
 
- export const settingsNews = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          arrows: false,
-          centerMode: true,
-          centerPadding: "20px",
-        },
-      },
-    ],
+export const settingsMobile = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+};
+
+ export const settingsDesktop = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  arrows: true,
+  centerMode: true,
+  centerPadding: "10px",
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
 };
+
+
+
+  

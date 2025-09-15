@@ -1,10 +1,11 @@
 "use client";
-import { useEffect } from "react";
+import React from "react";
+import { useEffect, useState } from "react";
 import Container from "@/components/container";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { settingsNews } from "./carouselConfig";
+import { settingsDesktop, settingsMobile } from "./carouselConfig";
 import { useProdutosStore } from "@/store/useProdutosStore";
 import Card from "@/components/card";
 
@@ -14,6 +15,19 @@ const Novidades = () => {
   useEffect(() => {
     fetchProdutos();
   }, []);
+
+  const [isDesktop, setIsDesktop] = React.useState(
+    typeof window !== "undefined" ? window.innerWidth >= 1024 : false
+  );
+
+  React.useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const settingsNews = isDesktop ? settingsDesktop : settingsMobile;
+
 
 
 const produtosRecentes = produtos
