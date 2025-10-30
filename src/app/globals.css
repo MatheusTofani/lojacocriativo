@@ -14,13 +14,13 @@ body {
   }
 }
 
-@media (max-width: 767px) {
+
   .animate-slideMobile {
     display: flex;
     width: max-content;
     animation: slideMobile 15s linear infinite;
   }
-}
+
 
 @keyframes fadeInColor {
   0% {

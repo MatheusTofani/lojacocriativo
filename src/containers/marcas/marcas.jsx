@@ -20,9 +20,9 @@ const Marcas = () => {
     <div className="my-[120px] ">
       <Container>
         <h3 className="text-[#61482A] font-bold text-[20px] pb-5 px-4 md:px-0">Marcas</h3>
-
+ </Container>
         {/* Mobile: Slider animado */}
-        <div className="block md:hidden overflow-hidden pb-2" role="list" aria-live="polite">
+        <div className="md:block overflow-hidden pb-2" role="list" aria-live="polite">
           <div className="flex w-fit animate-slideMobile">
             {duplicatedMarcas.map((marca, index) => (
               <li
@@ -40,19 +40,8 @@ const Marcas = () => {
           </div>
         </div>
 
-        {/* Desktop: Grid fixa */}
-        <div className="hidden md:grid md:grid-cols-5 md:grid-rows-2 gap-y-6 w-full">
-          {marcas.map((marca, index) => (
-            <div key={index} className="flex justify-center items-center">
-              <img
-                className="h-[70px] invert-[50%] sepia-[0%] saturate-[0%] hue-rotate-[180deg] brightness-[90%] contrast-[90%]"
-                src={marca.logo}
-                alt="Logo das marcas"
-              />
-            </div>
-          ))}
-        </div>
-      </Container>
+    
+     
     </div>
   );
 };
