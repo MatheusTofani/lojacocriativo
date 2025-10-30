@@ -9,6 +9,9 @@ const getMontserrat = Montserrat({
 });
 
 export const metadata = {
+  icons: {
+    icon: "/logos/logoSimbolo.png",
+  },
   title: "Co-Criativo | Loja Colaborativa",
   description:
     "A Co-Criativo é uma loja colaborativa que reúne marcas autorais e criadores independentes. Moda, arte, design e decoração com propósito, autenticidade e produção local.",
