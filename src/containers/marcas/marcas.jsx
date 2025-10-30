@@ -5,12 +5,12 @@ const Marcas = () => {
     { logo: '/logos/fran/fran.png' },
     { logo: '/logos/silvana/silvana.png' },
     { logo: '/logos/open/open.png' },
-    { logo: '/logos/dp/dp.png' },
     { logo: '/logos/jaqueline/jaqueline.png' },
     { logo: '/logos/visionaire/visionaire.png' },
-    { logo: '/logos/haru/haru.png' },
     { logo: '/logos/tiza/tiza.png' },
-    { logo: '/logos/ritmo/ritmo.jpg' },
+     { logo: '/logos/lume/lume.png' },
+     { logo: '/logos/arbo/arbo.png' },
+     { logo: '/logos/birra/birra.png' },
   ];
 
   // Duplicamos a lista para criar o efeito de loop no mobile

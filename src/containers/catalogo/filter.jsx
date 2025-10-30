@@ -129,12 +129,10 @@ const Filter = () => {
             {showMarcas && (
               <ul className="space-y-1 mt-2">
                 {[
-                  "DP SEMIJÓIAS",
                   "FRANCINE MOREIRA",
                   "OPEN HOUSE",
                   "VISIONAIRE",
                   "SILVANA",
-                  "RITMO",
                   "JAQUELINE BRAGA",
                   "DATIZA",
                 ].map((marca) => (
