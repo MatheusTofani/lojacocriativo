@@ -131,6 +131,10 @@ const Filter = () => {
                 {[
                   "FRANCINE MOREIRA",
                   "OPEN HOUSE",
+                  "MARIA BIRRA",
+                  "OURO DE MINA",
+                  "LUME",
+                  "ARBO",
                   "VISIONAIRE",
                   "SILVANA",
                   "JAQUELINE BRAGA",

@@ -1,12 +1,13 @@
 import Container from "@/components/container";
-import { FaBoxOpen, FaHammer } from "react-icons/fa6";
+import { FaHammer } from "react-icons/fa6";
 import { MdOutlineAttachMoney } from "react-icons/md";
+import { FaMedal } from "react-icons/fa";
 
 const Detail = () => {
     const list = [
         {
-            name: "Entrega para todo Brasil",
-            icon: <FaBoxOpen />,
+            name: "Selo de Qualidade",
+            icon: <FaMedal />,
         },
         {
             name: "Produtos Artesanais",
